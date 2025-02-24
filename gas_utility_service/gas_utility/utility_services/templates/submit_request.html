@@ -1,0 +1,29 @@
+<!-- templates/submit_request.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Service Request</title>
+</head>
+
+<body>
+    <h1>Submit Service Request</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <!-- New customer fields -->
+        <label for="id_new_customer_name">Name:</label>
+        <input type="text" name="new_customer_name" id="id_new_customer_name">
+
+        <label for="id_new_customer_email">Email:</label>
+        <input type="email" name="new_customer_email" id="id_new_customer_email">
+
+        <button type="submit">Submit Request</button>
+    </form>
+</body>
+
+</html>
